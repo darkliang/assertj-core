@@ -35,6 +35,7 @@ import org.assertj.core.util.VisibleForTesting;
  * @author Alex Ruiz
  * @author Mikhail Mazursky
  * @author Nicolas François
+ * @author Cal027
  */
 public abstract class AbstractShortAssert<SELF extends AbstractShortAssert<SELF>> extends AbstractComparableAssert<SELF, Short>
     implements NumberAssert<SELF, Short> {
@@ -132,6 +133,50 @@ public abstract class AbstractShortAssert<SELF extends AbstractShortAssert<SELF>
   @Override
   public SELF isNotPositive() {
     shorts.assertIsNotPositive(info, actual);
+    return myself;
+  }
+
+  /**
+   * Verifies that the actual value is even.
+   * <p>
+   * Example:
+   * <pre><code class='java'> // assertions will pass
+   * assertThat((short) 12).isEven();
+   * assertThat((short) 46).isEven();
+   *
+   * // assertions will fail
+   * assertThat((short) 3).isEven();
+   * assertThat((short) 15).isEven();</code></pre>
+   *
+   * @return this assertion object.
+   * @throws AssertionError if the actual value is {@code null}.
+   * @throws AssertionError if the actual value is not positive.
+   * @since 3.16.0
+   */
+  public SELF isEven() {
+    shorts.assertIsEven(info, actual);
+    return myself;
+  }
+
+  /**
+   * Verifies that the actual value is odd.
+   * <p>
+   * Example:
+   * <pre><code class='java'> // assertions will pass
+   * assertThat((short) 3).isOdd();
+   * assertThat((short) -17).isOdd();
+   *
+   * // assertions will fail
+   * assertThat((short) 2).isOdd();
+   * assertThat((short) -24).isOdd();</code></pre>
+   *
+   * @return this assertion object.
+   * @throws AssertionError if the actual value is {@code null}.
+   * @throws AssertionError if the actual value is not positive.
+   * @since 3.16.0
+   */
+  public SELF isOdd() {
+    shorts.assertIsOdd(info, actual);
     return myself;
   }
 
