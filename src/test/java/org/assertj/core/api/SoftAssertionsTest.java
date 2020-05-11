@@ -207,11 +207,11 @@ public class SoftAssertionsTest extends BaseAssertionsTest {
     // THEN
     List<Throwable> errors = softly.errorsCollected();
     assertThat(errors).hasSize(2);
-    assertThat(errors.get(0)).hasMessageStartingWith(format("%nExpecting:%n"
+    assertThat(errors.get(0)).hasMessageStartingWith(format("%nExpecting map:%n"
                                                             + " <{\"54\"=\"55\"}>%n"
                                                             + "to contain:%n"
                                                             + " <[MapEntry[key=\"1\", value=\"2\"]]>%n"
-                                                            + "but could not find:%n"
+                                                            + "but could not find the following map entries:%n"
                                                             + " <[MapEntry[key=\"1\", value=\"2\"]]>%n"));
     assertThat(errors.get(1)).hasMessageStartingWith(format("%nExpecting empty but was:<{\"54\"=\"55\"}>"));
   }
@@ -396,11 +396,11 @@ public class SoftAssertionsTest extends BaseAssertionsTest {
                                                  + "  <\"something was good\">%n"
                                                  + "but was:%n"
                                                  + "  <\"something was wrong\">"));
-      assertThat(errors.get(39)).contains(format("%nExpecting:%n"
+      assertThat(errors.get(39)).contains(format("%nExpecting map:%n"
                                                  + " <{\"54\"=\"55\"}>%n"
                                                  + "to contain:%n"
                                                  + " <[MapEntry[key=\"1\", value=\"2\"]]>%n"
-                                                 + "but could not find:%n"
+                                                 + "but could not find the following map entries:%n"
                                                  + " <[MapEntry[key=\"1\", value=\"2\"]]>%n"));
 
       assertThat(errors.get(40)).contains(format("%nExpecting:%n <12:00>%nto be equal to:%n <13:00>%nbut was not."));
@@ -1945,6 +1945,21 @@ public class SoftAssertionsTest extends BaseAssertionsTest {
   }
 
   @Test
+  void byte_array_soft_assertions_should_report_errors_on_methods_that_switch_the_object_under_test() {
+    // GIVEN
+    byte[] byteArray = "AssertJ".getBytes();
+    // WHEN
+    softly.assertThat(byteArray)
+          .as("encodedAsBase64()")
+          .overridingErrorMessage("error message 1")
+          .encodedAsBase64()
+          .isEmpty();
+    // THEN
+    then(softly.errorsCollected()).extracting(Throwable::getMessage)
+                                  .containsExactly("[encodedAsBase64()] error message 1");
+  }
+
+  @Test
   void should_work_with_string() {
     // GIVEN
     String base64String = "QXNzZXJ0Sg==";
@@ -1952,6 +1967,18 @@ public class SoftAssertionsTest extends BaseAssertionsTest {
     softly.assertThat(base64String)
           .decodedAsBase64()
           .containsExactly("AssertJ".getBytes());
+    // THEN
+    softly.assertAll();
+  }
+
+  @Test
+  void should_work_with_byte_array() {
+    // GIVEN
+    byte[] byteArray = "AssertJ".getBytes();
+    // WHEN
+    softly.assertThat(byteArray)
+          .encodedAsBase64()
+          .isEqualTo("QXNzZXJ0Sg==");
     // THEN
     softly.assertAll();
   }
