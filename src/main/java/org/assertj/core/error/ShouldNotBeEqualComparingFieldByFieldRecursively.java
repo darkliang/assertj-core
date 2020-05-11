@@ -13,6 +13,7 @@
 package org.assertj.core.error;
 
 import org.assertj.core.api.recursive.comparison.RecursiveComparisonConfiguration;
+import org.assertj.core.internal.ComparisonStrategy;
 import org.assertj.core.presentation.Representation;
 
 public class ShouldNotBeEqualComparingFieldByFieldRecursively extends BasicErrorMessageFactory {
@@ -38,6 +39,12 @@ public class ShouldNotBeEqualComparingFieldByFieldRecursively extends BasicError
                                                                 actual, other);
   }
 
+  /**
+   * Creates a new <code>{@link ShouldNotBeEqualComparingFieldByFieldRecursively}</code>.
+   *
+   * @param actual the actual value in the failed assertion.
+   * @return the created {@code ErrorMessageFactory}.
+   */
   public static ErrorMessageFactory shouldNotBeEqualComparingFieldByFieldRecursively(Object actual) {
     if (actual == null)
       return new ShouldNotBeEqualComparingFieldByFieldRecursively("%n" +
