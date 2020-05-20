@@ -23,14 +23,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.text.DateFormat;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.temporal.TemporalUnit;
 import java.util.Date;
 import java.util.Iterator;
@@ -2915,7 +2908,15 @@ public interface WithAssertions extends InstanceOfAssertFactories {
   default <T> void registerFormatterForType(Class<T> type, Function<T, String> formatter) {
     Assertions.registerFormatterForType(type, formatter);
   }
-
+  /**
+   * Creates a new instance of <code>{@link PeriodAssert}</code>.
+   *
+   * @param actual the actual value.
+   * @return the created assertion object.
+   */
+  default AbstractPeriodAssert<?> assertThat(final Period actual) {
+    return Assertions.assertThat(actual);
+  }
   /**
    * Fallback to use {@link StandardRepresentation} to revert the effect of calling {@link #useRepresentation(Representation)}.
    * @since 3.9.0

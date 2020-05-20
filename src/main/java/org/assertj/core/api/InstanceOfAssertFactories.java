@@ -19,14 +19,7 @@ import java.math.BigInteger;
 import java.net.URI;
 import java.net.URL;
 import java.nio.file.Path;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -108,6 +101,12 @@ public interface InstanceOfAssertFactories {
    */
   InstanceOfAssertFactory<DoublePredicate, DoublePredicateAssert> DOUBLE_PREDICATE = new InstanceOfAssertFactory<>(DoublePredicate.class,
                                                                                                                    Assertions::assertThat);
+  /**
+   * {@link InstanceOfAssertFactory} for an {@link Period}.
+   */
+  InstanceOfAssertFactory<Period, AbstractPeriodAssert<?>> PERIOD = new InstanceOfAssertFactory<>(Period.class,
+    Assertions::assertThat);
+
 
   /**
    * {@link InstanceOfAssertFactory} for a {@link CompletableFuture}, assuming {@code Object} as result type.

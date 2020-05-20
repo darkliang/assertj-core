@@ -21,14 +21,7 @@ import java.math.BigInteger;
 import java.net.URI;
 import java.net.URL;
 import java.nio.file.Path;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -1025,7 +1018,15 @@ public interface WithAssumptions {
   default LongPredicateAssert assumeThat(final LongPredicate longPredicate) {
     return Assumptions.assumeThat(longPredicate);
   }
-
+  /**
+   * Creates a new instance of <code>{@link PeriodAssert}</code> assumption.
+   *
+   * @param period the actual value.
+   * @return the created assumption for assertion object.
+   */
+  default AbstractPeriodAssert<?> assumeThat(final Period period) {
+    return Assumptions.assumeThat(period);
+  }
   /**
    * Creates a new instance of {@link DoublePredicateAssert} assumption.
    *

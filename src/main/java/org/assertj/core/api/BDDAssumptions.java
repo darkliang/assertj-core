@@ -22,14 +22,7 @@ import java.math.BigInteger;
 import java.net.URI;
 import java.net.URL;
 import java.nio.file.Path;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -2613,6 +2606,15 @@ public final class BDDAssumptions {
    * @since 3.14.0
    */
   public static AbstractUrlAssert<?> given(URL actual) {
+    return assumeThat(actual);
+  }
+  /**
+   * Creates a new assumption's instance for a {@link Instant} value.
+   *
+   * @param actual the actual value.
+   * @return the created assertion object.
+   */
+  public static AbstractPeriodAssert<?> given(Period actual) {
     return assumeThat(actual);
   }
 }

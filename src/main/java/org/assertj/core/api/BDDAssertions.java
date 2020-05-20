@@ -20,14 +20,7 @@ import java.math.BigInteger;
 import java.net.URI;
 import java.net.URL;
 import java.nio.file.Path;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -1227,6 +1220,7 @@ public class BDDAssertions extends Assertions {
     return assertThat(actual);
   }
 
+
   /**
    * Creates a new instance of <code>{@link UriAssert}</code>.
    *
@@ -1543,5 +1537,13 @@ public class BDDAssertions extends Assertions {
   public static ThrowableTypeAssert<IllegalStateException> thenIllegalStateException() {
     return assertThatIllegalStateException();
   }
-
+  /**
+   * Creates a new instance of <code>{@link PeriodAssert}</code>.
+   *
+   * @param actual the actual value.
+   * @return the created assertion object.
+   */
+  public static AbstractPeriodAssert<?> then(Period actual) {
+    return assertThat(actual);
+  }
 }
