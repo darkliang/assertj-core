@@ -33,11 +33,13 @@ class IterableAssert_containsOnlyOnceElementsOf_Test extends IterableAssertBaseT
   private final List<String> values = newArrayList("Yoda", "Luke");
 
   @Override
+  // CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/issues/1632
   protected ConcreteIterableAssert<Object> invoke_api_method() {
     return assertions.containsOnlyOnceElementsOf(values);
   }
 
   @Override
+  // CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/issues/1632
   protected void verify_internal_effects() {
     verify(iterables).assertContainsOnlyOnce(getInfo(assertions), getActual(assertions), values.toArray());
   }

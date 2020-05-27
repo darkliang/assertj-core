@@ -40,6 +40,7 @@ class IterableAssert_should_honor_SortedSet_comparator_Test {
     sets = newArrayList(sortedSetWithComparator, treeSetWithComparator, sortedSet, treeSet);
   }
 
+  // CS304 (manually modify) Issue link: https://github.com/joel-costigliola/assertj-core/issues/1632
   @Test
   void should_honor_sorted_set_comparator() {
     assertThat(sets).allSatisfy(set -> {

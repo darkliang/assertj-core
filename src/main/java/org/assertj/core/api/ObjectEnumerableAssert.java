@@ -1101,6 +1101,7 @@ public interface ObjectEnumerableAssert<SELF extends ObjectEnumerableAssert<SELF
    *
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1632
   SELF containsOnlyOnceElementsOf(Iterable<? extends ELEMENT> iterable);
 
   /**

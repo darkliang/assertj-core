@@ -552,6 +552,7 @@ public abstract class AbstractObjectArrayAssert<SELF extends AbstractObjectArray
    * {@inheritDoc}
    */
   @Override
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1632
   public SELF containsOnlyOnceElementsOf(Iterable<? extends ELEMENT> iterable) {
     return containsOnlyOnce(toArray(iterable));
   }
