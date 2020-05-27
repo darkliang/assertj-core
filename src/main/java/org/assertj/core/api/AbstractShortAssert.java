@@ -153,6 +153,7 @@ public abstract class AbstractShortAssert<SELF extends AbstractShortAssert<SELF>
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isEven() {
     shorts.assertIsEven(info, actual);
     return myself;
@@ -175,6 +176,7 @@ public abstract class AbstractShortAssert<SELF extends AbstractShortAssert<SELF>
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isOdd() {
     shorts.assertIsOdd(info, actual);
     return myself;

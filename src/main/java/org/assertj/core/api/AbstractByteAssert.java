@@ -197,6 +197,7 @@ public abstract class AbstractByteAssert<SELF extends AbstractByteAssert<SELF>> 
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isEven() {
     bytes.assertIsEven(info, actual);
     return myself;
@@ -219,6 +220,7 @@ public abstract class AbstractByteAssert<SELF extends AbstractByteAssert<SELF>> 
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isOdd() {
     bytes.assertIsOdd(info, actual);
     return myself;

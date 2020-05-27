@@ -22,6 +22,7 @@ import static org.mockito.Mockito.verify;
  *
  * @author Cal027
  */
+// CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
 public class LongAssert_isEven_Test extends LongAssertBaseTest {
 
   @Override

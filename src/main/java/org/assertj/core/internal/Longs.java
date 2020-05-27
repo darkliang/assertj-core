@@ -73,6 +73,7 @@ public class Longs extends Numbers<Long> {
    * @throws AssertionError if the actual value is {@code null}.
    * @throws AssertionError if the actual value is negative.
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public void assertIsEven(AssertionInfo info, Long actual) {
     Long lastDigit = actual & one();
     assertIsZero(info, lastDigit);
@@ -86,6 +87,7 @@ public class Longs extends Numbers<Long> {
    * @throws AssertionError if the actual value is {@code null}.
    * @throws AssertionError if the actual value is negative.
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public void assertIsOdd(AssertionInfo info, Long actual) {
     Long lastDigit = actual & one();
     assertIsNotZero(info, lastDigit);

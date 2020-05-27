@@ -157,6 +157,7 @@ public abstract class AbstractLongAssert<SELF extends AbstractLongAssert<SELF>> 
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isEven() {
     longs.assertIsEven(info, actual);
     return myself;
@@ -179,6 +180,7 @@ public abstract class AbstractLongAssert<SELF extends AbstractLongAssert<SELF>> 
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isOdd() {
     longs.assertIsOdd(info, actual);
     return myself;

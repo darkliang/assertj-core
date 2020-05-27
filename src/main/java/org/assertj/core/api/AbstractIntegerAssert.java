@@ -189,6 +189,7 @@ public abstract class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<S
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isEven() {
     integers.assertIsEven(info, actual);
     return myself;
@@ -211,6 +212,7 @@ public abstract class AbstractIntegerAssert<SELF extends AbstractIntegerAssert<S
    * @throws AssertionError if the actual value is not positive.
    * @since 3.16.0
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public SELF isOdd() {
     integers.assertIsOdd(info, actual);
     return myself;

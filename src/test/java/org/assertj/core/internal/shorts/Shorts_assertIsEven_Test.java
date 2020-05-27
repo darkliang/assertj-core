@@ -26,6 +26,7 @@ import org.junit.jupiter.api.Test;
  *
  * @author Cal027
  */
+// CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
 public class Shorts_assertIsEven_Test extends ShortsBaseTest {
 
   @Test

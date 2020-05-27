@@ -75,6 +75,7 @@ public class Shorts extends Numbers<Short> {
    * @throws AssertionError if the actual value is {@code null}.
    * @throws AssertionError if the actual value is negative.
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public void assertIsEven(AssertionInfo info, Short actual) {
     Short lastDigit = (short) (actual & one());
     assertIsZero(info, lastDigit);
@@ -88,6 +89,7 @@ public class Shorts extends Numbers<Short> {
    * @throws AssertionError if the actual value is {@code null}.
    * @throws AssertionError if the actual value is negative.
    */
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1807
   public void assertIsOdd(AssertionInfo info, Short actual) {
     Short lastDigit = (short) (actual & one());
     assertIsNotZero(info, lastDigit);
