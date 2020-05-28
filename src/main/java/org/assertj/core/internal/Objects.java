@@ -849,7 +849,7 @@ public class Objects {
     if (!org.assertj.core.util.Objects.areEqual(value, expectedValue))
       throw failures.failure(info, shouldHavePropertyOrFieldWithValue(actual, name, expectedValue, value));
   }
-
+  //CS304 Issue link https://github.com/joel-costigliola/assertj-core/issues/1496
   /**
    * Asserts that the actual object has the same hashCode as the given object.
    *

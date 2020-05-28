@@ -1,6 +1,6 @@
 package org.assertj.core.api.period;
 
-//CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
+//CS304 (manually written) Issue link  https://github.com/joel-costigliola/assertj-core/issues/1853
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.util.AssertionsUtil.assertThatAssertionErrorIsThrownBy;
 import static org.assertj.core.util.FailureMessages.actualIsNull;

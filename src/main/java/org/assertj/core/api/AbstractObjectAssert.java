@@ -574,7 +574,7 @@ public abstract class AbstractObjectAssert<SELF extends AbstractObjectAssert<SEL
     objects.assertHasFieldOrPropertyWithValue(info, actual, name, value);
     return myself;
   }
-
+  //CS304 Issue link https://github.com/joel-costigliola/assertj-core/issues/1496
   /**
    * Asserts that the actual object has only the specified fields or properties. (only test the declared member)
    * <p>

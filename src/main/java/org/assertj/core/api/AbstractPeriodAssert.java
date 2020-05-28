@@ -1,4 +1,4 @@
-//CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
+//CS304 Issue link https://github.com/joel-costigliola/assertj-core/issues/1853
 package org.assertj.core.api;
 
 import java.time.Period;

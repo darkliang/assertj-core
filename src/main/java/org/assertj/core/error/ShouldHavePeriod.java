@@ -1,7 +1,7 @@
 package org.assertj.core.error;
 
 import java.time.Period;
-//CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
+//CS304 Issue link https://github.com/joel-costigliola/assertj-core/issues/1853
 public class ShouldHavePeriod extends BasicErrorMessageFactory {
   private static final String SHOULD_HAVE_PERIOD_UNIT = "%n"
                                                         + "Expecting Period:%n"

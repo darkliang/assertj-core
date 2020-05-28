@@ -2908,7 +2908,7 @@ public interface WithAssertions extends InstanceOfAssertFactories {
   default <T> void registerFormatterForType(Class<T> type, Function<T, String> formatter) {
     Assertions.registerFormatterForType(type, formatter);
   }
-  //CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
+  //CS304 Isseu link https://github.com/joel-costigliola/assertj-core/issues/1853
   /**
    * Creates a new instance of <code>{@link PeriodAssert}</code>.
    *
