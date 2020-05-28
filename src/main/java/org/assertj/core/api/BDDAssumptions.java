@@ -2608,6 +2608,7 @@ public final class BDDAssumptions {
   public static AbstractUrlAssert<?> given(URL actual) {
     return assumeThat(actual);
   }
+  //CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
   /**
    * Creates a new assumption's instance for a {@link Instant} value.
    *

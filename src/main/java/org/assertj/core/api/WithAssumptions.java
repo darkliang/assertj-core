@@ -1018,6 +1018,7 @@ public interface WithAssumptions {
   default LongPredicateAssert assumeThat(final LongPredicate longPredicate) {
     return Assumptions.assumeThat(longPredicate);
   }
+  //CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
   /**
    * Creates a new instance of <code>{@link PeriodAssert}</code> assumption.
    *

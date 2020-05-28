@@ -126,6 +126,7 @@ public class ProxifyMethodChangingTheObjectUnderTest {
     if (currentAssert instanceof DoubleArrayAssert) return double[].class;
     if (currentAssert instanceof DoublePredicateAssert) return DoublePredicate.class;
     if (currentAssert instanceof DurationAssert) return Duration.class;
+    //CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
     if (currentAssert instanceof PeriodAssert) return Period.class;
     if (currentAssert instanceof FileAssert) return File.class;
     if (currentAssert instanceof FloatAssert) return Float.class;

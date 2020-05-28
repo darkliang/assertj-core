@@ -101,6 +101,7 @@ public interface InstanceOfAssertFactories {
    */
   InstanceOfAssertFactory<DoublePredicate, DoublePredicateAssert> DOUBLE_PREDICATE = new InstanceOfAssertFactory<>(DoublePredicate.class,
                                                                                                                    Assertions::assertThat);
+  //CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
   /**
    * {@link InstanceOfAssertFactory} for an {@link Period}.
    */

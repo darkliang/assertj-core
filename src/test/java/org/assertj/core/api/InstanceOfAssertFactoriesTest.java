@@ -988,6 +988,7 @@ class InstanceOfAssertFactoriesTest {
     // THEN
     result.isEqualByComparingTo(0);
   }
+  //CS304 https://github.com/joel-costigliola/assertj-core/issues/1853
   @Test
   void period_factory_should_allow_period_assertions() {
     // GIVEN
