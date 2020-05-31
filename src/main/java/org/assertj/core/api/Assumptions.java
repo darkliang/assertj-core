@@ -26,14 +26,7 @@ import java.math.BigInteger;
 import java.net.URI;
 import java.net.URL;
 import java.nio.file.Path;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -68,7 +61,7 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
-
+import java.time.Period;
 import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.assertj.core.api.recursive.comparison.RecursiveComparisonConfiguration;
 import org.assertj.core.util.CheckReturnValue;
@@ -1242,5 +1235,14 @@ public class Assumptions {
     IterableSizeAssert<?> iterableSizeAssert = (IterableSizeAssert<?>) assertion;
     Class<?>[] constructorTypes = array(AbstractIterableAssert.class, Integer.class);
     return asAssumption(IterableSizeAssert.class, constructorTypes, iterableSizeAssert.returnToIterable(), assertion.actual);
+  }
+  /**
+   * Creates a new instance of {@link PeriodAssert} assumption.
+   *
+   * @param actual the Duration to test
+   * @return the created assumption for assertion object.
+   */
+  public static AbstractPeriodAssert<?> assumeThat(Period actual) {
+    return asAssumption(PeriodAssert.class, Period.class, actual);
   }
 }

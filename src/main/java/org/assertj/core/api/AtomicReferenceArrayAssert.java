@@ -604,6 +604,7 @@ public class AtomicReferenceArrayAssert<T>
    * {@inheritDoc}
    */
   @Override
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1632
   public AtomicReferenceArrayAssert<T> containsOnlyOnceElementsOf(Iterable<? extends T> iterable) {
     return containsOnlyOnce(toArray(iterable));
   }

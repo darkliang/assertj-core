@@ -1,3 +1,5 @@
+//CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/pull/1846
+
 package org.assertj.core.error;
 
 import org.assertj.core.api.recursive.comparison.RecursiveComparisonConfiguration;

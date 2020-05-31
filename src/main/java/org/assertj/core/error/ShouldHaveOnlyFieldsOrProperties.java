@@ -11,7 +11,7 @@
  * Copyright 2012-2020 the original author or authors.
  */
 package org.assertj.core.error;
-
+//CS304 Issue link https://github.com/joel-costigliola/assertj-core/issues/1496
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
