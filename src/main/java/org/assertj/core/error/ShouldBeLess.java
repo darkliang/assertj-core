@@ -51,6 +51,7 @@ public class ShouldBeLess extends BasicErrorMessageFactory {
     super("%nExpecting:%n <%s>%nto be less than:%n <%s> %s", actual, other, comparisonStrategy);
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Creates a new <code>{@link ShouldBeLess}</code>.
    * @param actual the actual value in the failed assertion.

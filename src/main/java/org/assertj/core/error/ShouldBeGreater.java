@@ -53,6 +53,7 @@ public class ShouldBeGreater extends BasicErrorMessageFactory {
     super("%nExpecting:%n <%s>%nto be greater than:%n <%s> %s", actual, other, comparisonStrategy);
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Creates a new <code>{@link ShouldBeGreater}</code>.
    *

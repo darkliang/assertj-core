@@ -301,6 +301,7 @@ public abstract class AbstractAssert<SELF extends AbstractAssert<SELF, ACTUAL>, 
     return myself;
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Given the Comparator instance, verifies that the actual value is greater than the given one
    * <p>
@@ -321,6 +322,7 @@ public abstract class AbstractAssert<SELF extends AbstractAssert<SELF, ACTUAL>, 
     return myself;
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Given the Comparator instance, verifies that the actual value is less than the given one
    * <p>

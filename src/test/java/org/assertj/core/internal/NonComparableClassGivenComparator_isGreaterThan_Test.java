@@ -1,9 +1,13 @@
 package org.assertj.core.internal;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.assertj.core.api.AbstractAssert;
 import org.junit.jupiter.api.Test;
 import java.util.Comparator;
 import java.lang.AssertionError;
+
+//CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
 /**
  * Tests for {@link AbstractAssert#isGreaterThan(Object)}.
  *

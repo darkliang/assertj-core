@@ -338,6 +338,7 @@ public class Objects {
       throw failures.failure(info, shouldBeEqual(actual, expected, comparisonStrategy, info.representation()));
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Asserts that one object is greater than other.
    *
@@ -351,6 +352,7 @@ public class Objects {
       throw failures.failure(info, shouldBeGreater(actual, other, comparisonStrategy));
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Compares actual and other with standard strategy (null safe equals check).
    *
@@ -362,6 +364,7 @@ public class Objects {
     return comparisonStrategy.isGreaterThan(actual, other);
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Asserts that one object is less than other.
    *
@@ -375,6 +378,7 @@ public class Objects {
       throw failures.failure(info, shouldBeLess(actual, other, comparisonStrategy));
   }
 
+  // CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1492
   /**
    * Compares actual and other with standard strategy (null safe equals check).
    *
