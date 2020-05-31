@@ -35,6 +35,7 @@ import java.time.OffsetDateTime;
 import java.time.OffsetTime;
 import java.time.ZonedDateTime;
 import java.time.temporal.TemporalUnit;
+import java.time.Period;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Iterator;
@@ -3015,4 +3016,13 @@ public class Assertions implements InstanceOfAssertFactories {
     AbstractAssert.setCustomRepresentation(CONFIGURATION_PROVIDER.representation());
   }
 
+  /**
+   * Creates a new instance of <code>{@link InstantAssert}</code>.
+   *
+   * @param actual the actual value.
+   * @return the created assertion object.
+   */
+  public static AbstractPeriodAssert<?> assertThat(Period actual) {
+    return AssertionsForClassTypes.assertThat(actual);
+  }
 }

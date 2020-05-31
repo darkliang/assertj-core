@@ -115,8 +115,8 @@ public class Objects {
   @VisibleForTesting
   public Comparator<?> getComparator() {
     return comparisonStrategy instanceof ComparatorBasedComparisonStrategy
-      ? ((ComparatorBasedComparisonStrategy) comparisonStrategy).getComparator()
-      : null;
+        ? ((ComparatorBasedComparisonStrategy) comparisonStrategy).getComparator()
+        : null;
   }
 
   @VisibleForTesting
@@ -594,7 +594,7 @@ public class Objects {
       } else {
         Object actualFieldValue = getPropertyOrFieldValue(actual, fieldName);
         if (!propertyOrFieldValuesAreEqual(actualFieldValue, otherFieldValue, fieldName,
-          comparatorByPropertyOrField, comparatorByType)) {
+                                           comparatorByPropertyOrField, comparatorByType)) {
           fieldsNames.add(fieldName);
           rejectedValues.add(actualFieldValue);
           expectedValues.add(otherFieldValue);
@@ -603,7 +603,7 @@ public class Objects {
     }
     if (!fieldsNames.isEmpty())
       throw failures.failure(info, shouldBeEqualToIgnoringGivenFields(actual, fieldsNames,
-        rejectedValues, expectedValues, nullFields));
+                                                                      rejectedValues, expectedValues, nullFields));
   }
 
   /**
@@ -628,14 +628,14 @@ public class Objects {
                                                           String... fields) {
     assertNotNull(info, actual);
     ByFieldsComparison byFieldsComparison = isEqualToComparingOnlyGivenFields(actual, other,
-      comparatorByPropertyOrField,
-      comparatorByType,
-      fields);
+                                                                              comparatorByPropertyOrField,
+                                                                              comparatorByType,
+                                                                              fields);
     if (byFieldsComparison.isFieldsNamesNotEmpty())
       throw failures.failure(info, shouldBeEqualComparingOnlyGivenFields(actual, byFieldsComparison.fieldsNames,
-        byFieldsComparison.rejectedValues,
-        byFieldsComparison.expectedValues,
-        newArrayList(fields)));
+                                                                         byFieldsComparison.rejectedValues,
+                                                                         byFieldsComparison.expectedValues,
+                                                                         newArrayList(fields)));
   }
 
   private <A> ByFieldsComparison isEqualToComparingOnlyGivenFields(A actual, A other,
@@ -649,7 +649,7 @@ public class Objects {
       Object actualFieldValue = getPropertyOrFieldValue(actual, fieldName);
       Object otherFieldValue = getPropertyOrFieldValue(other, fieldName);
       if (!propertyOrFieldValuesAreEqual(actualFieldValue, otherFieldValue, fieldName, comparatorByPropertyOrField,
-        comparatorByType)) {
+                                         comparatorByType)) {
         rejectedFieldsNames.add(fieldName);
         expectedValues.add(otherFieldValue);
         rejectedValues.add(actualFieldValue);
@@ -679,12 +679,12 @@ public class Objects {
                                                      TypeComparators comparatorByType, String... fields) {
     assertNotNull(info, actual);
     ByFieldsComparison byFieldsComparison = isEqualToIgnoringGivenFields(actual, other, comparatorByPropertyOrField,
-      comparatorByType, fields);
+                                                                         comparatorByType, fields);
     if (byFieldsComparison.isFieldsNamesNotEmpty())
       throw failures.failure(info, shouldBeEqualToIgnoringGivenFields(actual, byFieldsComparison.fieldsNames,
-        byFieldsComparison.rejectedValues,
-        byFieldsComparison.expectedValues,
-        newArrayList(fields)));
+                                                                      byFieldsComparison.rejectedValues,
+                                                                      byFieldsComparison.expectedValues,
+                                                                      newArrayList(fields)));
   }
 
   private <A> ByFieldsComparison isEqualToIgnoringGivenFields(A actual, A other,
@@ -706,7 +706,7 @@ public class Objects {
       Object otherFieldValue = getPropertyOrFieldValue(other, fieldName);
 
       if (!propertyOrFieldValuesAreEqual(actualFieldValue, otherFieldValue, fieldName,
-        comparatorByPropertyOrField, comparatorByType)) {
+                                         comparatorByPropertyOrField, comparatorByType)) {
         fieldsNames.add(fieldName);
         rejectedValues.add(actualFieldValue);
         expectedValues.add(otherFieldValue);
@@ -715,7 +715,7 @@ public class Objects {
     return new ByFieldsComparison(fieldsNames, expectedValues, rejectedValues);
   }
 
-  @SuppressWarnings({"unchecked", "rawtypes"})
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   static boolean propertyOrFieldValuesAreEqual(Object actualFieldValue, Object otherFieldValue, String fieldName,
                                                Map<String, Comparator<?>> comparatorByPropertyOrField,
                                                TypeComparators comparatorByType) {
@@ -761,7 +761,7 @@ public class Objects {
     }
     if (!nullFieldNames.isEmpty())
       throw failures.failure(info, shouldHaveNoNullFieldsExcept(actual, nullFieldNames,
-        newArrayList(propertiesOrFieldsToIgnore)));
+                                                                newArrayList(propertiesOrFieldsToIgnore)));
   }
 
   /**
@@ -780,11 +780,11 @@ public class Objects {
     Set<Field> declaredFields = getDeclaredFieldsIncludingInherited(actual.getClass());
     Set<String> ignoredFields = newLinkedHashSet(propertiesOrFieldsToIgnore);
     List<String> nonNullFieldNames = declaredFields.stream()
-      .filter(field -> !ignoredFields.contains(field.getName()))
-      .filter(field -> canReadFieldValue(field, actual))
-      .filter(field -> getPropertyOrFieldValue(actual, field.getName()) != null)
-      .map(Field::getName)
-      .collect(toList());
+                                                   .filter(field -> !ignoredFields.contains(field.getName()))
+                                                   .filter(field -> canReadFieldValue(field, actual))
+                                                   .filter(field -> getPropertyOrFieldValue(actual, field.getName()) != null)
+                                                   .map(Field::getName)
+                                                   .collect(toList());
     if (!nonNullFieldNames.isEmpty()) {
       throw failures.failure(info, shouldHaveAllNullFields(actual, nonNullFieldNames, list(propertiesOrFieldsToIgnore)));
     }
@@ -809,7 +809,7 @@ public class Objects {
     List<Difference> differences = determineDifferences(actual, other, comparatorByPropertyOrField, comparatorByType);
     if (!differences.isEmpty()) {
       throw failures.failure(info, shouldBeEqualByComparingFieldByFieldRecursive(actual, other, differences,
-        info.representation()));
+                                                                                 info.representation()));
     }
   }
 
@@ -849,8 +849,8 @@ public class Objects {
 
   public static Set<String> getFieldsNames(Class<?> clazz) {
     return getDeclaredFieldsIncludingInherited(clazz).stream()
-      .map(Field::getName)
-      .collect(toSet());
+                                                     .map(Field::getName)
+                                                     .collect(toSet());
   }
 
   /**
@@ -866,22 +866,22 @@ public class Objects {
    */
   private static Set<Field> getDeclaredFieldsIgnoringSyntheticAndStatic(Class<?> clazz) {
     return stream(clazz.getDeclaredFields()).filter(field -> !(field.isSynthetic()
-      || Modifier.isStatic(field.getModifiers())))
-      .collect(toCollection(LinkedHashSet::new));
+                                                               || Modifier.isStatic(field.getModifiers())))
+                                            .collect(toCollection(LinkedHashSet::new));
   }
 
   public boolean areEqualToIgnoringGivenFields(Object actual, Object other,
                                                Map<String, Comparator<?>> comparatorByPropertyOrField,
                                                TypeComparators comparatorByType, String... fields) {
     return isEqualToIgnoringGivenFields(actual, other, comparatorByPropertyOrField, comparatorByType,
-      fields).isFieldsNamesEmpty();
+                                        fields).isFieldsNamesEmpty();
   }
 
   public boolean areEqualToComparingOnlyGivenFields(Object actual, Object other,
                                                     Map<String, Comparator<?>> comparatorByPropertyOrField,
                                                     TypeComparators comparatorByType, String... fields) {
     return isEqualToComparingOnlyGivenFields(actual, other, comparatorByPropertyOrField, comparatorByType,
-      fields).isFieldsNamesEmpty();
+                                             fields).isFieldsNamesEmpty();
   }
 
   public <A> void assertHasFieldOrProperty(AssertionInfo info, A actual, String name) {
@@ -899,7 +899,18 @@ public class Objects {
     if (!org.assertj.core.util.Objects.areEqual(value, expectedValue))
       throw failures.failure(info, shouldHavePropertyOrFieldWithValue(actual, name, expectedValue, value));
   }
-
+  //CS304 Issue link https://github.com/joel-costigliola/assertj-core/issues/1496
+  /**
+   * Asserts that the actual object has the same hashCode as the given object.
+   *
+   * @param <A>    the actual type
+   * @param info   contains information about the assertion.
+   * @param actual the given object.
+   * @param names  the names list
+   * @throws AssertionError if the actual object is null.
+   * @throws AssertionError if the given object is null.
+   * @throws AssertionError if the actual object has not the same member with names.
+   */
   public <A> void assertHasOnlyFieldsOrProperties(AssertionInfo info, A actual, String... names) {
     assertNotNull(info, actual);
     if (names == null) {
@@ -912,7 +923,6 @@ public class Objects {
     System.out.println(act);
     if (!expected.equals(act))
       throw failures.failure(info, shouldHaveOnlyFieldsOrProperties(actual, names));
-
 
   }
 

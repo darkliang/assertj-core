@@ -574,6 +574,7 @@ public abstract class AbstractObjectAssert<SELF extends AbstractObjectAssert<SEL
     objects.assertHasFieldOrPropertyWithValue(info, actual, name, value);
     return myself;
   }
+  //CS304 Issue link https://github.com/joel-costigliola/assertj-core/issues/1496
   /**
    * Asserts that the actual object has only the specified fields or properties. (only test the declared member)
    * <p>
@@ -609,10 +610,11 @@ public abstract class AbstractObjectAssert<SELF extends AbstractObjectAssert<SEL
    * @throws IllegalArgumentException if name is {@code null}.
    * @throws AssertionError if the actual object has not the given field/property
    */
-  public SELF hasOnlyFieldsOrProperties(String... names){
+  public SELF hasOnlyFieldsOrProperties(String... names) {
     objects.assertHasOnlyFieldsOrProperties(info, actual, names);
     return myself;
   }
+
   /**
    * Extracts the values of given fields/properties from the object under test into a list, this new list becoming
    * the object under test.

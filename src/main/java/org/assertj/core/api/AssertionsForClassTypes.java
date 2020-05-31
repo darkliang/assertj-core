@@ -60,7 +60,7 @@ import org.assertj.core.util.CheckReturnValue;
 import org.assertj.core.util.Files;
 import org.assertj.core.util.URLs;
 import org.assertj.core.util.introspection.FieldSupport;
-
+import java.time.Period;
 /**
  * Java 8 is picky when choosing the right <code>assertThat</code> method if the object under test is generic and bounded,
  * for example if foo is instance of T that extends Exception, java 8  will complain that it can't resolve
@@ -1736,7 +1736,15 @@ public class AssertionsForClassTypes {
   public static void registerCustomDateFormat(String userCustomDateFormatPattern) {
     AbstractDateAssert.registerCustomDateFormat(userCustomDateFormatPattern);
   }
-
+  /**
+   * Creates a new instance of <code>{@link PeriodAssert}</code>.
+   *
+   * @param period the actual value.
+   * @return the created assertion object.
+   */
+  public static AbstractPeriodAssert<?> assertThat(Period period) {
+    return new PeriodAssert(period);
+  }
   /**
    * Remove all registered custom date formats =&gt; use only the defaults date formats to parse string as date.
    * <p>
