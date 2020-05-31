@@ -9,11 +9,11 @@
  * specific language governing permissions and limitations under the License.
  *
  * Copyright 2012-2020 the original author or authors.
+ * CS304 Issue link: https://github.com/joel-costigliola/assertj-core/pull/1846
  */
 package org.assertj.core.error;
 
 import org.assertj.core.api.recursive.comparison.RecursiveComparisonConfiguration;
-import org.assertj.core.internal.ComparisonStrategy;
 import org.assertj.core.presentation.Representation;
 
 public class ShouldNotBeEqualComparingFieldByFieldRecursively extends BasicErrorMessageFactory {
