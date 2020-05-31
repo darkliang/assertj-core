@@ -168,7 +168,7 @@ public class RecursiveComparisonAssert<SELF extends RecursiveComparisonAssert<SE
   }
 
   /**
-   * CS304 Issue link: https://github.com/joel-costigliola/assertj-core/pull/1846
+   * CS304 Issue link: https://github.com/joel-costigliola/assertj-core/issues/1643
    * Asserts that actual object is not equal to the given object based on a property/field by property/field comparison
    * recursively (including inherited ones). This can be handy if {@code isNotEqualTo} implementation does not suit you.
    * <p>

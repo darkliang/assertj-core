@@ -1,4 +1,4 @@
-//CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/pull/1846
+//CS304 (manually written) Issue link: https://github.com/joel-costigliola/assertj-core/issues/1643
 
 package org.assertj.core.error;
 
